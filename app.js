@@ -22,6 +22,5 @@ function moveAmoeba(e) {
     // prevent browser from using default events
     e.preventDefault();
     // redraw triangle after a key is pressed
-    var draw = drawModule();
-    draw.amoeba();
+    drawModule.amoeba();
 }

@@ -1,16 +1,5 @@
 var drawModule = function() {
-
-    var amoeba = function() {
-        ctx.beginPath();
-        ctx.arc(centerX + deltaX, centerY + deltaY, 16, 0, 2 * Math.PI);
-        ctx.fillStyle = "green";
-        ctx.fill();
-        ctx.strokeStyle = "green";
-        ctx.stroke();
-    }
-    amoeba();
-    drawModule.amoeba = amoeba;
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     var food = function(num, radius, maxX, maxY) {
         for (var i = 0; i <= num; i++) {
             ctx.beginPath();
@@ -34,6 +23,19 @@ var drawModule = function() {
         ctx.fillText("Score: " + score, 16, 32);
     }
     scoreBoard();
+
+    var amoeba = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // amoeba
+        ctx.beginPath();
+        ctx.arc(centerX + deltaX, centerY + deltaY, 16, 0, 2 * Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        ctx.strokeStyle = "green";
+        ctx.stroke();
+        ctx.closePath();
+    }
+    drawModule.amoeba = amoeba;
 }
 
 drawModule();
