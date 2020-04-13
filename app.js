@@ -1,4 +1,6 @@
 window.addEventListener("keydown", moveAmoeba, false);
+// ISSUE: canvas is cleared when a key is pressed
+// Change or of functions maybe?
 
 function moveAmoeba(e) {
     switch (e.keyCode) {
@@ -21,6 +23,6 @@ function moveAmoeba(e) {
     }
     // prevent browser from using default events
     e.preventDefault();
-    // redraw triangle after a key is pressed
+    // redraw amoeba after a key is pressed
     drawModule.amoeba();
 }
