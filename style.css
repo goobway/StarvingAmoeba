@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#canvas {
+    position: absolute;
+    margin: auto;
+    /* margin-top: 60px; */
+    display: block;
+    border: 5px solid black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#button {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+}
