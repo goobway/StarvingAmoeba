@@ -6,7 +6,6 @@ body {
 #canvas {
     position: absolute;
     margin: auto;
-    /* margin-top: 60px; */
     display: block;
     border: 5px solid black;
     top: 0;
@@ -15,8 +14,23 @@ body {
     right: 0;
 }
 
-#button {
+.start-menu {
+    width: 720px;
+    height: 480px;
     position: absolute;
-    top: 200px;
-    left: 20px;
+    border: 3px solid red;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: auto;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 3px solid blue;
 }
