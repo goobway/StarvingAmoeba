@@ -48,17 +48,16 @@ function drawModule() {
         ctx.fillText("Score: " + score, 16, 32);
     }
     scoreBoard();
-
-    var amoeba = function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // amoeba
-        ctx.beginPath();
-        ctx.arc(centerX + deltaX, centerY + deltaY, 16, 0, 2 * Math.PI);
-        ctx.fillStyle = "green";
-        ctx.fill();
-        ctx.strokeStyle = "green";
-        ctx.stroke();
-        ctx.closePath();
-    }
-    drawModule.amoeba = amoeba;
 }
+
+function amoebaUpdate() {
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // draw amoeba
+    ctx.beginPath();
+    ctx.arc(mouseX, mouseY, 16, 0, 2 * Math.PI, true);
+    ctx.fillStyle = "green";
+    ctx.fill();
+
+    requestAnimationFrame(amoebaUpdate);
+}
+amoebaUpdate();
