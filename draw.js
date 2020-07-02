@@ -56,8 +56,8 @@ function amoebaUpdate() {
     deltaX = mouseX - xPosition;
     deltaY = mouseY - yPosition;
     // slow amoeba destination arrival time 
-    xPosition += (deltaX / 10);
-    yPosition += (deltaY / 10);
+    xPosition += (deltaX / 30);
+    yPosition += (deltaY / 30);
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     // draw amoeba
     ctx.beginPath();
