@@ -25,6 +25,7 @@ function startGame() {
 // draw the game
 function drawModule() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // draw food in random locations
     var food = function(num, radius, maxX, maxY) {
         for (var i = 0; i <= num; i++) {
             ctx.beginPath();
@@ -51,10 +52,16 @@ function drawModule() {
 }
 
 function amoebaUpdate() {
+    // find position difference between mouse and amoeba
+    deltaX = mouseX - xPosition;
+    deltaY = mouseY - yPosition;
+    // slow amoeba destination arrival time 
+    xPosition += (deltaX / 10);
+    yPosition += (deltaY / 10);
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     // draw amoeba
     ctx.beginPath();
-    ctx.arc(mouseX, mouseY, 16, 0, 2 * Math.PI, true);
+    ctx.arc(xPosition, yPosition, 16, 0, 2 * Math.PI, true);
     ctx.fillStyle = "green";
     ctx.fill();
 

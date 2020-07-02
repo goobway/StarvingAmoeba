@@ -5,3 +5,7 @@ var centerY = canvas.height / 2;
 var score = 0;
 var mouseX = centerX;
 var mouseY = centerY;
+var xPosition = 0;
+var yPosition = 0;
+var deltaX = 0;
+var deltaY = 0;

@@ -13,8 +13,18 @@ function getPosition(el) {
     var yPosition = 0;
 
     while (el) {
-        xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-        yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+        if (el.tagName == "BODY") {
+            // deal with browser quirks with body/window/document and page scroll
+            var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+            var yScroll = el.scrollTop || document.documentElement.scrollTop;
+
+            xPosition += (el.offsetLeft - xScroll + el.clientLeft);
+            yPosition += (el.offsetTop - yScroll + el.clientTop);
+        } else {
+            // for all other non-BODY elements
+            xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+            yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+        }
         el = el.offsetParent;
     }
     return {
